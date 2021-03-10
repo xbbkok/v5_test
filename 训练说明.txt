@@ -1,0 +1,13 @@
+训练步骤：
+1.第一步：data/images  下面放置要训练的图片
+2.第二步：data/labels  下面放置图片的标签，标准的YOLO格式，.txt文件
+3.第三步：data/  下面建立自己的yaml文件，注意修改路径为训练集图片（data/images /train）的路径和测试集图片（data/images /valid）的路径修，修改类数和类别名
+4.第四步：修改models下面的yaml文件（选择对应的文件只用修改类别数就可以）
+
+其他：所用的预训练的yolov5的模型（s,x,m,l）、批次、
+
+遇见的报错的问题：
+1.Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized.
+解决地址：https://blog.csdn.net/Victor_X/article/details/110082033
+2.gbk错误：在train.py中第61行修改为：    with open(opt.data,encoding="utf8") as f:
+在test.py中第69行修改为：               with open(data,encoding="utf8") as f:
